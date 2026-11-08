@@ -258,7 +258,7 @@ locals {
 }
 
 module "datadog_monitor" {
-  source                     = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/monitor"
+  source                     = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/monitor"
   for_each                   = { for key, value in local.monitor : key => value if contains(keys(local.monitor_configuration), key) }
   version                    = "5.1.3"
   monitor_message            = <<-EOT
@@ -292,7 +292,7 @@ module "datadog_monitor" {
 module "datadog_synthetic_hc" {
   count = var.is_internal_service ? 0 : 1
 
-  source       = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/synthetic_hc"
+  source       = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/synthetic_hc"
   version      = "3.1.1"
   alertchannel = var.alertchannel
   endpoint     = local.endpoint

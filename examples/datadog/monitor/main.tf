@@ -1,6 +1,6 @@
 
 module "datadog_monitor" {
-  source          = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/monitor"
+  source          = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/monitor"
   version         = "1.1.0"
   datadog_api_key = var.DD_API_KEY
   datadog_app_key = var.DD_APP_KEY

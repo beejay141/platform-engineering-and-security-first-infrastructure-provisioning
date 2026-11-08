@@ -1,5 +1,5 @@
 module "datadog_slo_monitor" {
-  source              = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source              = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   version             = "1.1.0"
   monitor_name        = var.monitor_name
   monitor_description = var.monitor_description
@@ -31,7 +31,7 @@ module "datadog_slo_monitor" {
 
 
 module "datadog_slo_metric" {
-  source             = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source             = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   version            = "1.1.0"
   metric_name        = var.metric_name
   metric_description = var.metric_description

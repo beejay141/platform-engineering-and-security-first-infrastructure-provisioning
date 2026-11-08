@@ -1,5 +1,5 @@
 module "datadog_slo_error_rate" {
-  source             = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source             = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   count              = var.slo_enabled ? 1 : 0
   version            = "3.1.1"
   metric_name        = "${local.app_prefix}-slo [High error rate]"
@@ -36,7 +36,7 @@ module "datadog_slo_error_rate" {
 }
 
 module "datadog_slo_monitor_latency" {
-  source              = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source              = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   count               = var.slo_enabled ? 1 : 0
   version             = "3.1.1"
   monitor_name        = "${local.app_prefix}-slo [HTTP Latency]"
@@ -66,7 +66,7 @@ module "datadog_slo_monitor_latency" {
 }
 
 module "datadog_slo_synthetic_hc" {
-  source              = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source              = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   count               = var.slo_enabled ? (var.is_internal_service ? 0 : 1) : 0
   version             = "3.1.1"
   monitor_name        = "${local.endpoint} [Healthcheck]"
@@ -96,7 +96,7 @@ module "datadog_slo_synthetic_hc" {
 }
 
 module "datadog_slo_next_js_error_rate" {
-  source             = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source             = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   count              = var.slo_next_js_enabled ? 1 : 0
   version            = "3.1.1"
   metric_name        = "${local.app_prefix}-slo [High error rate]"
@@ -133,7 +133,7 @@ module "datadog_slo_next_js_error_rate" {
 
 }
 module "datadog_slo_next_js_monitor_latency" {
-  source              = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source              = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   count               = var.slo_next_js_enabled ? 1 : 0
   version             = "3.1.1"
   monitor_name        = "${local.app_prefix}-slo [HTTP Latency]"
@@ -162,7 +162,7 @@ module "datadog_slo_next_js_monitor_latency" {
   environment = var.workspace
 }
 module "datadog_slo_next_js_synthetic_hc" {
-  source              = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/datadog/slo"
+  source              = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/datadog/slo"
   count               = var.slo_next_js_enabled ? (var.is_internal_service ? 0 : 1) : 0
   version             = "3.1.1"
   monitor_name        = "${local.endpoint} [Healthcheck]"

@@ -38,7 +38,7 @@ Variables allow the operator to configure what the resources are and how they ar
 ```hcl
 # This creates an ECS application and underlying services that support its operation like load balancers etc
 module "services" {
-  source                   = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/aws/ecs-apps"
+  source                   = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/aws/ecs-apps"
   version                  = "4.4.0"
   workspace                = local.workspace
   service                  = "cbh-test"
@@ -66,7 +66,7 @@ Terraform modules are imported via the module path as the source and the tags
 define the version that will be used in the terraform application.
 
 ```hcl
-  source  = "app.terraform.io/clipboard-staffing/modules/clipboardstaffing//modules/aws/ecs-apps"
+  source  = "app.terraform.io/<your-tfc-org>/modules/<your-module-repo>//modules/aws/ecs-apps"
   version = "4.4.0"
 ```
 
@@ -86,14 +86,13 @@ hub create <repository-name>
 2. Copy the following files from this repository into your repository
 - CONTRIBUTING.md
 - terraform-docs.tmpl
-- .releaserc.json
 - pre-commit-config.yaml
 - .gitignore
 - scripts/
 - .github/
 - Makefile
 - commitlint.config.js
-  These files are at the core of the functional CI/CD and development process which will allow you run all the steps already outlined in this guide
+  These files are at the core of the functional CI and development process which will allow you run all the steps already outlined in this guide
 3. Create a modules folder to store your terraform code
 ```bash
 mkdir modules
