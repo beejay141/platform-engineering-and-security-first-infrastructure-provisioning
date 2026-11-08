@@ -1,0 +1,43 @@
+##
+content: |-
+  # AWS Kinesis Module
+  This creates a kinesis stream for consumption by end-user clients.
+
+  {{ .Header }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  ## Testing
+  ### Prerequisites
+  * [Go v1.15 or greater](https://go.dev/dl/)
+
+  ### Make sure you have exported / configured aws credentials in your shell
+  ### Required aws credential vars in shell
+     * `AWS_ACCESS_KEY_ID`
+     * `AWS_SECRET_ACCESS_KEY`
+     * `AWS_DEFAULT_REGION`
+
+  ###  Run the following commands to test from the root of the repository:
+  ```shell
+  cd ./tests/aws/
+  go test -v kinesis_test.go
+  ```
+
+  ## Generating Documentation
+  ### Prerequisites
+  * [Terraform Docs](https://terraform-docs.io/)
+
+  ### Run the following commands to generate documentation
+  ```shell
+  terraform-docs markdown  --output-file README.md --output-mode inject .
+  ```
+
+
+  {{ .Requirements }}
+
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}

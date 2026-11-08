@@ -1,0 +1,67 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": "arn:aws:iam::977320448514:role/cbh-test-prod-shadow-ecs-role",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "environmentFiles": null,
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "dockerSecurityOptions": null,
+      "memory": null,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "977320448514.dkr.ecr.us-west-2.amazonaws.com/clipboardhealth-base:87a8a2013",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": {
+        "com.datadoghq.tags.service": "cbh-test",
+        "com.datadoghq.tags.version": "87a8a2013",
+        "com.datadoghq.tags.env": "prod-shadow"
+      },
+      "systemControls": null,
+      "privileged": null,
+      "name": "cbh-test-${prefix}"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "2048",
+  "taskRoleArn": "arn:aws:iam::977320448514:role/cbh-test-prod-shadow-task-role",
+  "compatibilities": [
+    "EC2",
+    "FARGATE"
+  ],
+  "family": "cbh-test-prod-shadow",
+  "pidMode": null,
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "512",
+  "volumes": []
+}
